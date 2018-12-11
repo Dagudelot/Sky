@@ -10473,12 +10473,7 @@ a.text-dark:focus {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #f38181;
-  text-align: center;
-  color: white;
-  font-family: "montserrat", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 13px;
 }
 
@@ -10494,7 +10489,7 @@ body {
 }
 
 .img-home {
-  margin: 30px 30px 30px;
+  margin: 30px 30px 30px a;
 }
 
 .title-home {

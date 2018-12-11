@@ -19,9 +19,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
 </head>
 <body>
    
@@ -57,46 +54,26 @@
                 <a class="dropdown-item" href="#">Preguntas frecuentes</a>
               </div>
             </li>
-
-            @auth
-
-            <li class="nav-item dropdown">
-
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ Auth::user()->name }}
-              </a>
-
-              <div class="dropdown-menu" aria-labelledby="dropdown06">
-                
-                <a class="dropdown-item text-center" href="{{ route('logout') }}" 
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Logout <i class="fas fa-sign-out-alt"></i>
-                </a>
-
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-                </form>
-
-              </div>
-            </li>
-
-            @else
-
             <li class="nav-item">
                <a href="{{ route('login') }}" class="btn btn-outline-primary">Login!</a>
                <a href="{{ route('register') }}" class="btn btn-outline-primary ml-2">Signup!</a>
             </li>
-
-            @endauth
-
           </ul>
         </div>
       </nav>
    </header>
    <!--/Header-->
+
+<main role="main">
+   <section class="jumbotron text-center mb-0">
+        <div class="row pt-5">
    
   @yield('content')
+
+        </div>
+    </section>
+</main>
+
    
    <!--Footer-->
    <footer class="container py-5">
