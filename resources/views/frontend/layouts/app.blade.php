@@ -19,37 +19,77 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 </head>
 <body>
    
    <!--Header-->
    <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light bg-white fixed-top alert-home">
-        <a href="#" class="navbar-brand">
+        <a href="{{ route('main') }}" class="navbar-brand">
            <img src="{{ asset('img/logo.png') }}" width="30" height="30" class="d-inline-block align-top">
            Sky
         </a>
+
+        <!-- Button for mobile devices only -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBS" aria-controls="navbarBS" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- /Button for mobile devices only -->
+
         <div class="collapse navbar-collapse" id="navbarBS">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Características</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown06" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Más información
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdown06">
-                <a class="dropdown-item" href="#">Seguridad</a>
+                <a class="dropdown-item" href="{{ route('security') }}">Seguridad</a>
                 <a class="dropdown-item" href="#">Clientes</a>
                 <a class="dropdown-item" href="#">Preguntas frecuentes</a>
               </div>
             </li>
-            <li class="nav-item">
-               <a href="#" class="btn btn-outline-primary">Try it!</a>
+
+            @auth
+
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#!" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ Auth::user()->name }}
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdown06">
+                
+                <a class="dropdown-item text-center" href="{{ route('logout') }}" 
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout <i class="fas fa-sign-out-alt"></i>
+                </a>
+
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+
+              </div>
             </li>
+
+            @else
+
+            <li class="nav-item">
+               <a href="{{ route('login') }}" class="btn btn-outline-primary">Login</a>
+               <a href="{{ route('register') }}" class="btn btn-outline-primary ml-2">Signup</a>
+            </li>
+
+            @endauth
+
           </ul>
         </div>
       </nav>

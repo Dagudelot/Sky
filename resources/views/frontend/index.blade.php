@@ -10,16 +10,17 @@
          <div class="col-sm-12 col-md-12 col-lg-6 pt-5 text-left">
             <div class="container">
                <h5 class="title-home pt-5 ml-5">
-                  Save your files <br>
+                  Save your files frontend <br>
                   with more efficiency and <b>security</b>
                </h5>
                <p class="subtitle-home pt-4 ml-5">
                   Get the storage you need Upload files and view them <br>from any device, whenever you want.
                </p>
-               <a href="" class="btn btn-primary mt-4 ml-5">Try it for free 30 days.</a>
+               <a href="#" class="btn btn-primary mt-4 ml-5">Try it for free 30 days.</a>
                <p class="mt-2 ml-5">
                   You can also <a href="">Buy a plan right now!</a>
                </p>
+
             </div>
          </div>
 

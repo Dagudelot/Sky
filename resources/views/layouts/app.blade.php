@@ -62,7 +62,7 @@
 
             <li class="nav-item dropdown">
 
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#!" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }}
               </a>
 
@@ -84,8 +84,8 @@
             @else
 
             <li class="nav-item">
-               <a href="{{ route('login') }}" class="btn btn-outline-primary">Login!</a>
-               <a href="{{ route('register') }}" class="btn btn-outline-primary ml-2">Signup!</a>
+               <a href="{{ route('login') }}" class="btn btn-outline-primary">Login</a>
+               <a href="{{ route('register') }}" class="btn btn-outline-primary ml-2">Signup</a>
             </li>
 
             @endauth
@@ -124,7 +124,7 @@
          
          <div class="col-6 col-md-6 col-lg-3 text-center">
             <h5>Payment methods</h5>
-            <img src="img/payment.jpg" class="img-fluid" width="220">
+            <img src="{{ asset('img/payment.jpg') }}" class="img-fluid" width="220">
          </div>
 
       </div>
