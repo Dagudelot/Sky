@@ -32,4 +32,9 @@ class User extends Authenticatable
     public function files(){
         return $this->hasMany(File::class);
     }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

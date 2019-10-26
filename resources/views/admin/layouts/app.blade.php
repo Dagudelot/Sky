@@ -34,12 +34,12 @@
         <div class="container mt-4 mb-2">
 
           <div class="mb-2">
-            <img src="{{ asset('img/users/user.jpg') }}" class="img-responsive" style="border-radius: 50%;" alt="" width="70">
+            <img src="{{ asset('img') }}/{{ Auth::user()->image }}" class="img-responsive" style="border-radius: 50%;" alt="" width="70">
           </div>
 
-          <div class="profile-usertitle">
-            <div class="profile-usertitle-name">Daniel Agudelo</div>
-            <div class="profile-usertitle-status">daniel.agudelo5169@admin.com</div>
+          <div class="profile-usertitle mt-4">
+            <div class="profile-usertitle-name mb-2">{{ Auth::user()->name }}</div>
+            <div class="profile-usertitle-status">{{ Auth::user()->email }}</div>
           </div>
 
         </div>
@@ -114,10 +114,10 @@
             <ul class="collapse list-unstyled" id="pageSubmenu">
               
               <li>
-                <a href="#"> View all</a>
+                <a href="{{ route('users.index') }}"> View all</a>
               </li>
               <li>
-                <a href="#"> Add role</a>
+                <a href="{{ route('users.create') }}"> Add user</a>
               </li>
 
             </ul>

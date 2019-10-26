@@ -21,7 +21,7 @@ Route::view('/', 'frontend.index')->name('main');
 Route::view('/security', 'security')->name('security');
 
 //Admin Dashboard
-Route::get('dashboard', 'HomeController@index');
+Route::view('/dashboard', 'admin.index');
 
 //Routes for files
 Route::get('files/upload', 'FilesController@create')
@@ -72,6 +72,15 @@ Route::patch('permission/add', 'Admin\PermissionsController@store')->name('permi
 Route::get('permission/edit/{id}', 'Admin\PermissionsController@edit')->name('permission.edit');
 Route::patch('permission/update/{id}', 'Admin\PermissionsController@update')->name('permission.update');
 Route::patch('permission/edit/{id}', 'Admin\PermissionsController@delete')->name('permission.delete');
+
+//Routes for Users
+Route::get('user', 'Admin\UsersController@index')->name('users.index');
+Route::get('user/add', 'Admin\UsersController@create')->name('users.create');
+Route::patch('user/add', 'Admin\UsersController@store')->name('users.store');
+Route::get('user/show/{id}', 'Admin\UsersController@show')->name('users.show');
+Route::get('user/edit/{id}', 'Admin\UsersController@edit')->name('users.edit');
+Route::patch('user/update/{id}', 'Admin\UsersController@update')->name('users.update');
+Route::patch('user/edit/{id}', 'Admin\UsersController@delete')->name('users.delete');
 
 //Authentication Routes
 Auth::routes();

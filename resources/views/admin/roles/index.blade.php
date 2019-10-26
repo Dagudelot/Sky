@@ -33,13 +33,13 @@
 	    <tr>
 	      <th scope="row">{{ $role->id }}</th>
 	      <td>{{ $role->name }}</td>
-	      <td><a href="{{ route('roles.show', $role->id) }}" class="btn btn-outline-success">View </a></td>
-	      <td><a href="{{ route('roles.edit', $role->id) }}" class="btn btn-outline-primary"><i class="fas fa-pencil"></i>Edit</a></td>
+	      <td><a href="{{ route('roles.show', $role->id) }}" class="btn btn-outline-success"><i class="fas fa-eye"></i> View </a></td>
+	      <td><a href="{{ route('roles.edit', $role->id) }}" class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
 	      <td>
 	      	<form action="{{ route('roles.delete', $role->id) }}" method="POST">
 	      		@csrf
 	      		@method('PATCH')
-	      		<button class="btn btn-outline-danger" type="submit">Delete</button>
+	      		<button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash-alt"></i> Delete</button>
 	      	</form>
 	  	  </td>
 	    </tr>

@@ -34,12 +34,12 @@
 	      <th scope="row">{{ $permission->id }}</th>
 	      <td>{{ $permission->name }}</td>
 	      <td>{{ $permission->description }}</td>
-	      <td><a href="{{ route('permission.edit', $permission->id) }}" class="btn btn-outline-primary"><i class="fas fa-pencil"></i>Edit</a></td>
+	      <td><a href="{{ route('permission.edit', $permission->id) }}" class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Edit</a></td>
 	      <td>
 	      	<form action="{{ route('permission.delete', $permission->id) }}" method="POST">
 	      		@csrf
 	      		@method('PATCH')
-	      		<button class="btn btn-outline-danger" type="submit">Delete</button>
+	      		<button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash-alt"></i> Delete</button>
 	      	</form>
 	  	  </td>
 	    </tr>
